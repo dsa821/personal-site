@@ -1,21 +1,16 @@
-import { BlogPosts } from 'app/components/posts'
-
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        My Portfolio
-      </h1>
-      <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
+      <h1 className='mb-8 text-3xl font-bold tracking-wider'>dsa.dev</h1>
+      <p className='mb-4'>
+        Hi, I'm Dan! I'm a full stack software engineer with 15+ years of experience building web
+        applications to handle complex data, particularly in genomics. I have extensive
+        experience with Angular web applications with C# back-ends and am familiar
+        with other front-end frameworks including React and NextJS.
       </p>
-      <div className="my-8">
+      {/* <div className='my-8'>
         <BlogPosts />
-      </div>
+      </div> */}
     </section>
-  )
+  );
 }
