@@ -1,8 +1,6 @@
 import './global.css';
 import type { Metadata } from 'next';
 import { Inconsolata } from 'next/font/google';
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -13,15 +11,15 @@ import { baseUrl } from './sitemap';
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'dsa.dev',
+    template: '%s | dsa.dev',
   },
-  description: 'This is my portfolio.',
+  description: 'Personal website for Daniel Sa.',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'dsa.dev',
+    description: 'Personal website for Daniel Sa.',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'dsa.dev',
     locale: 'en_US',
     type: 'website',
   },
@@ -55,12 +53,11 @@ export default function RootLayout({
     <html
       lang='en'
       className={cx(
-        // 'text-black bg-white dark:text-white dark:bg-black',
         'text-white bg-gradient-to-br from-slate-700 min-h-lvh',
         bodyFont.className
       )}
     >
-      <body className='antialiased max-w-xl mx-4 mt-8 md:mx-auto'>
+      <body className='antialiased max-w-2xl mx-4 mt-8 md:mx-auto'>
         <main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
           <Navbar />
           {children}
