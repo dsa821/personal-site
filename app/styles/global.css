@@ -1,4 +1,9 @@
-@import 'tailwindcss';
+/* @import 'tailwindcss'; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './fullpagejs.overrides.css';
 
 ::selection {
   background-color: #47a3f3;
@@ -31,6 +36,13 @@
 
 html {
   min-width: 360px;
+}
+
+h1 {
+  @apply !font-bold text-4xl tracking-wider mb-4;
+}
+h2 {
+  @apply !font-bold text-2xl mb-2;
 }
 
 .prose .anchor {

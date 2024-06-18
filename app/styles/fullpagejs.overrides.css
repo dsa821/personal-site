@@ -1,0 +1,17 @@
+.fp-prev {
+  left: 50px !important;
+}
+
+.fp-next {
+  right: 50px !important;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: #fff !important;
+}
+
+.fp-slidesNav {
+	display: flex;
+	justify-content: center;
+}
