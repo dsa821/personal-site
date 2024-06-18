@@ -3,34 +3,12 @@
 import React from 'react';
 import Image from 'next/image';
 import ReactFullpage, { fullpageApi } from '@fullpage/react-fullpage';
+import { SectionData, sectionData } from './data';
 
 import styles from './forenseq.module.css';
+import { imageConfigDefault } from 'next/dist/shared/lib/image-config';
 
 const colors = ['#6b9a43', '#3283d1'];
-
-type SlideData = {
-  color?: string;
-  anchor: string;
-};
-
-const slideData: SlideData[] = [
-  {
-    color: '#123456',
-    anchor: 'slide1',
-  },
-  {
-    anchor: 'slide2',
-  },
-  {
-    anchor: 'slide3',
-  },
-  {
-    anchor: 'slide4',
-  },
-  {
-    anchor: 'slide5',
-  },
-];
 
 export default function Page() {
   return (
@@ -38,13 +16,13 @@ export default function Page() {
       licenseKey='gplv3-license'
       credits={{ enabled: true }}
       navigation
-      sectionsColor={slideData.map((x, i) => x.color || colors[i % 2])}
+      sectionsColor={sectionData.map((x, i) => x.color || colors[i % 2])}
       slidesNavigation
-      anchors={slideData.map((x) => x.anchor)}
+      anchors={sectionData.map((x) => x.anchor)}
       render={({ fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
-            <Slides fullpageApi={fullpageApi} />
+            <Slides data={sectionData} fullpageApi={fullpageApi} />
           </ReactFullpage.Wrapper>
         );
       }}
@@ -59,99 +37,52 @@ function FullpageSection({ children }: { children: React.ReactNode }) {
 function FullpageSlide({ children }: { children: React.ReactNode }) {
   return (
     <div className='slide'>
-      <div className='max-w-4xl mx-4 md:mx-auto flex flex-col gap-4'>
-        {children}
-      </div>
+      <div className='max-w-4xl mx-4 md:mx-auto flex flex-col'>{children}</div>
     </div>
   );
 }
 
-function Slides({ fullpageApi }: { fullpageApi: fullpageApi }) {
+function Slides({
+  data,
+  fullpageApi,
+}: {
+  data: SectionData[];
+  fullpageApi: fullpageApi;
+}) {
   return (
     <>
-      <FullpageSection>
-        <div className='text-center'>
-          <h1>ForenSeq Universal Analysis Software</h1>
-        </div>
-      </FullpageSection>
-
-      <FullpageSection>
-        <FullpageSlide>
-          <Image
-            src='/images/forenseq/v1/run-details.png'
-            alt='ForenSeq v1 Run Details'
-            width={800}
-            height={600}
-          />
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </div>
-        </FullpageSlide>
-
-        <FullpageSlide>
-          <Image
-            src='/images/forenseq/v2/run-details.png'
-            alt='ForenSeq v2 Run Details'
-            width={800}
-            height={600}
-          />
-
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </div>
-        </FullpageSlide>
-      </FullpageSection>
-
-      <FullpageSection>
-        <FullpageSlide>
-          <Image
-            src='/images/forenseq/v1/locus-overview.png'
-            alt='ForenSeq v1 Locus Overview'
-            width={800}
-            height={600}
-          />
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </div>
-        </FullpageSlide>
-
-        <FullpageSlide>
-          <Image
-            src='/images/forenseq/v2/locus-overview.png'
-            alt='ForenSeq v2 Locus Overview'
-            width={800}
-            height={600}
-          />
-
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </div>
-        </FullpageSlide>
-      </FullpageSection>
+      {data.map((section, i) => {
+        if (section.content) {
+          return (
+            <FullpageSection key={i}>
+              <div className='prose'>{section.content}</div>
+            </FullpageSection>
+          );
+        } else if (section.slides != null) {
+          return (
+            <FullpageSection key={i}>
+              {section.slides.map((slide, i) => {
+                return (
+                  <FullpageSlide key={i}>
+                    <h1 className='mb-2 text-center'>{slide.title}</h1>
+                    {slide.img && (
+                      <div className='mx-auto'>
+                        <Image
+                          src={slide.img.src}
+                          alt={slide.img.alt}
+                          width={slide.img.width ?? 800}
+                          height={slide.img.height ?? 600}
+                        />
+                      </div>
+                    )}
+                    <div className='prose'>{slide.content}</div>
+                  </FullpageSlide>
+                );
+              })}
+            </FullpageSection>
+          );
+        }
+      })}
     </>
   );
 }
