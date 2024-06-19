@@ -5,9 +5,6 @@ import Image from 'next/image';
 import ReactFullpage, { fullpageApi } from '@fullpage/react-fullpage';
 import { SectionData, sectionData } from './data';
 
-import styles from './forenseq.module.css';
-import { imageConfigDefault } from 'next/dist/shared/lib/image-config';
-
 const colors = ['#6b9a43', '#3283d1'];
 
 export default function Page() {
@@ -57,7 +54,7 @@ function Slides({
         if (section.content) {
           return (
             <FullpageSection key={i}>
-              <div className='prose dark:prose-invert'>{section.content}</div>
+              <div>{section.content}</div>
             </FullpageSection>
           );
         } else if (section.slides != null) {
@@ -77,7 +74,7 @@ function Slides({
                         />
                       </div>
                     )}
-                    <div className='prose dark:prose-invert'>{slide.content}</div>
+                    <div>{slide.content}</div>
                   </FullpageSlide>
                 );
               })}

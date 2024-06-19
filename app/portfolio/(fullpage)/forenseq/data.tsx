@@ -28,11 +28,10 @@ export const sectionData: SectionData[] = [
     color: '#123456',
     anchor: 'intro',
     content: (
-      <div>
-        <h1 className='text-center font-bold'>
-          ForenSeq Universal Analysis Software
-        </h1>
-        <div className='mt-8 max-w-4xl mx-4 md:mx-auto prose dark:prose-invert'>
+      <div className='prose dark:prose-invert max-w-none'>
+        <h1 className='text-center'>ForenSeq Universal Analysis Software</h1>
+
+        <div className='mt-8 max-w-4xl mx-4 md:mx-auto '>
           <p>
             The ForenSeq Universal Analysis Software (UAS) provides a platform
             for analyzing and managing forensic genomic data, simplifying
@@ -52,29 +51,30 @@ export const sectionData: SectionData[] = [
               Illumina
             </Link>{' '}
             using:
-            <ul>
-              <li>AngularJS</li>
-              <li>Bootstrap</li>
-              <li>.NET Web API</li>
-              <li>Entity Framework</li>
-              <li>PostgreSQL</li>
-            </ul>
           </p>
+          <ul>
+            <li>AngularJS</li>
+            <li>Bootstrap</li>
+            <li>.NET Web API</li>
+            <li>Entity Framework</li>
+            <li>PostgreSQL</li>
+          </ul>
+
           <p>
             It was later spun off into a separate company as{' '}
             <Link href='https://www.verogen.com/' target='_blank'>
               Verogen
             </Link>{' '}
             where it was rebuilt with a fresh tech stack:
-            <ul>
-              <li>Angular</li>
-              <li>Angular Material</li>
-              <li>Tailwind CSS</li>
-              <li>.NET Core Web API</li>
-              <li>Entity Framework Core</li>
-              <li>PostgreSQL</li>
-            </ul>
           </p>
+          <ul>
+            <li>Angular</li>
+            <li>Angular Material</li>
+            <li>Tailwind CSS</li>
+            <li>.NET Core Web API</li>
+            <li>Entity Framework Core</li>
+            <li>PostgreSQL</li>
+          </ul>
         </div>
       </div>
     ),
@@ -197,8 +197,13 @@ export const sectionData: SectionData[] = [
         content: (
           <p>
             Analysis of mitochondrial DNA gave me the unique opportunity to come
-            up with an innovative custom data visualization using the power of D3.js.
-            Since mtDNA is circular in shape, the visual on the left takes a simple line graph and wraps it into a circle. Markers along the outer edge help indicate areas with high concentrations of variants and other flags. The component on the right allows the user to see the full genomic data at each position, as well as giving them precise control over what section of the DNA to view.
+            up with an innovative custom data visualization using the power of
+            D3.js. Since mtDNA is circular in shape, the visual on the left
+            takes a simple line graph and wraps it into a circle. Markers along
+            the outer edge help indicate areas with high concentrations of
+            variants and other flags. The component on the right allows the user
+            to see the full genomic data at each position, as well as giving
+            them precise control over what section of the DNA to view.
           </p>
         ),
       },
