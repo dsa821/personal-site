@@ -1,9 +1,9 @@
 .fp-prev {
-  left: 50px !important;
+  @apply hidden md:block md:!left-[50px];
 }
 
 .fp-next {
-  right: 50px !important;
+  @apply hidden md:block md:!right-[50px];
 }
 
 #fp-nav ul li a span,
@@ -12,6 +12,6 @@
 }
 
 .fp-slidesNav {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }

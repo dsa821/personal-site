@@ -152,6 +152,24 @@ export const sectionData: SectionData[] = [
     ],
   },
 
+  {
+    anchor: 'mtdna',
+    slides: [
+      {
+        title: 'v2 mtDNA Analysis',
+        img: {
+          src: '/images/forenseq/v2/mito-results.png',
+          alt: 'ForenSeq v1 Locus Details',
+        },
+        content: (
+          <p>
+            Analysis of mitochondrial DNA gave me the chance to come up with an innovative data visualization using the power of D3.js. Since mtDNA is circular in nature, as opposed to the typical linear strands found in chromosomal DNA
+          </p>
+        ),
+      },
+    ],
+  },
+
   // {
   //   // Run Details
   //   anchor: 'run-details',

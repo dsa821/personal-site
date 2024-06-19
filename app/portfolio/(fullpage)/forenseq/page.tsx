@@ -15,9 +15,11 @@ export default function Page() {
     <ReactFullpage
       licenseKey='gplv3-license'
       credits={{ enabled: true }}
-      navigation
       sectionsColor={sectionData.map((x, i) => x.color || colors[i % 2])}
+      navigation
       slidesNavigation
+      responsiveWidth={1120}
+      responsiveHeight={800}
       anchors={sectionData.map((x) => x.anchor)}
       render={({ fullpageApi }) => {
         return (
