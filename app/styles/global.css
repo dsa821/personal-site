@@ -120,11 +120,11 @@ h2 {
 }
 
 .prose ul {
-  @apply list-disc pl-6;
+  @apply list-disc pl-8;
 }
 
 .prose ol {
-  @apply list-decimal pl-6;
+  @apply list-decimal pl-8;
 }
 
 .prose > :first-child {

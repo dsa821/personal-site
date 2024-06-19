@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export type SectionData = {
@@ -31,17 +32,49 @@ export const sectionData: SectionData[] = [
         <h1 className='text-center font-bold'>
           ForenSeq Universal Analysis Software
         </h1>
-        <div className='mt-8 max-w-4xl mx-4 md:mx-auto'>
-          The ForenSeq Universal Analysis Software (UAS) provides a platform for
-          analyzing and managing forensic genomic data, simplifying complex
-          bioinformatics. It brings the power of next-gen sequencing to the
-          field of forensic genomics, and pairs it with first-class UI tools.
-          Users can view a high-level overview of a sample, use the powerful
-          filtering and flagging system to identify areas of interest, and drill
-          down to the allele level to override individual calls. Data can then
-          be exported in various formats such as Excel (*.xlsx) or CODIS
-          (*.cmf), so that users can continue to work with their data the way
-          they want.
+        <div className='mt-8 max-w-4xl mx-4 md:mx-auto prose'>
+          <p>
+            The ForenSeq Universal Analysis Software (UAS) provides a platform
+            for analyzing and managing forensic genomic data, simplifying
+            complex bioinformatics. It brings the power of next-gen sequencing
+            to the field of forensic genomics, and pairs it with first-class UI
+            tools. Users can view a high-level overview of a sample, use the
+            powerful filtering and flagging system to identify areas of
+            interest, and drill down to the allele level to override individual
+            calls. Data can then be exported in various formats such as Excel
+            (*.xlsx) or CODIS (*.cmf), so that users can have full control of
+            their data.
+          </p>
+
+          <p>
+            This application was initially developed at{' '}
+            <Link href='https://www.illumina.com/' target='_blank'>
+              Illumina
+            </Link>{' '}
+            using:
+            <ul>
+              <li>AngularJS</li>
+              <li>Bootstrap</li>
+              <li>.NET Web API</li>
+              <li>Entity Framework</li>
+              <li>PostgreSQL</li>
+            </ul>
+          </p>
+          <p>
+            It was later spun off into a separate company as{' '}
+            <Link href='https://www.verogen.com/' target='_blank'>
+              Verogen
+            </Link>{' '}
+            where it was rebuilt with a fresh tech stack:
+            <ul>
+              <li>Angular</li>
+              <li>Angular Material</li>
+              <li>Tailwind CSS</li>
+              <li>.NET Core Web API</li>
+              <li>Entity Framework Core</li>
+              <li>PostgreSQL</li>
+            </ul>
+          </p>
         </div>
       </div>
     ),
@@ -163,7 +196,9 @@ export const sectionData: SectionData[] = [
         },
         content: (
           <p>
-            Analysis of mitochondrial DNA gave me the chance to come up with an innovative data visualization using the power of D3.js. Since mtDNA is circular in nature, as opposed to the typical linear strands found in chromosomal DNA
+            Analysis of mitochondrial DNA gave me the unique opportunity to come
+            up with an innovative custom data visualization using the power of D3.js.
+            Since mtDNA is circular in shape, the visual on the left takes a simple line graph and wraps it into a circle. Markers along the outer edge help indicate areas with high concentrations of variants and other flags. The component on the right allows the user to see the full genomic data at each position, as well as giving them precise control over what section of the DNA to view.
           </p>
         ),
       },
