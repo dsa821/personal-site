@@ -22,7 +22,7 @@ type ImageData = {
   height?: number;
 };
 
-export const sectionData: SectionData[] = [
+export const portfolioData: SectionData[] = [
   {
     // Main Title
     color: '#123456',

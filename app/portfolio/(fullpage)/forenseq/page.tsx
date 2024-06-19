@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import ReactFullpage, { fullpageApi } from '@fullpage/react-fullpage';
-import { SectionData, sectionData } from './data';
+import { SectionData, portfolioData } from './data';
 
 const colors = ['#6b9a43', '#3283d1'];
 
@@ -12,16 +12,16 @@ export default function Page() {
     <ReactFullpage
       licenseKey='gplv3-license'
       credits={{ enabled: true }}
-      sectionsColor={sectionData.map((x, i) => x.color || colors[i % 2])}
+      sectionsColor={portfolioData.map((x, i) => x.color || colors[i % 2])}
       navigation
       slidesNavigation
       responsiveWidth={1120}
       responsiveHeight={800}
-      anchors={sectionData.map((x) => x.anchor)}
+      anchors={portfolioData.map((x) => x.anchor)}
       render={({ fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
-            <Slides data={sectionData} fullpageApi={fullpageApi} />
+            <Slides data={portfolioData} fullpageApi={fullpageApi} />
           </ReactFullpage.Wrapper>
         );
       }}

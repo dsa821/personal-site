@@ -1,0 +1,19 @@
+.section {
+  @apply max-w-3xl px-2 pb-4 md:mx-auto;
+  
+	/*
+	hack to address collapsing margins between sections
+	https://stackoverflow.com/a/1939980
+	*/
+  @apply overflow-hidden;
+}
+
+.bg-v1 {
+	/* background-color: #3283d1; */
+	@apply bg-blue-900;
+}
+
+.bg-v2 {
+	/* background-color: #6b9a43; */
+	@apply bg-green-800;
+}
