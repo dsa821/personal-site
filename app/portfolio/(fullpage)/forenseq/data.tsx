@@ -32,7 +32,7 @@ export const sectionData: SectionData[] = [
         <h1 className='text-center font-bold'>
           ForenSeq Universal Analysis Software
         </h1>
-        <div className='mt-8 max-w-4xl mx-4 md:mx-auto prose'>
+        <div className='mt-8 max-w-4xl mx-4 md:mx-auto prose dark:prose-invert'>
           <p>
             The ForenSeq Universal Analysis Software (UAS) provides a platform
             for analyzing and managing forensic genomic data, simplifying

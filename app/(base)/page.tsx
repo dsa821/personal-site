@@ -5,7 +5,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section>
+    <section className='prose dark:prose-invert'>
       <h1>dsa.dev</h1>
       <p>
         Hi, I'm Dan! I'm a full stack software engineer with 15+ years of

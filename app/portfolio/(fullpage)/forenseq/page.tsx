@@ -57,7 +57,7 @@ function Slides({
         if (section.content) {
           return (
             <FullpageSection key={i}>
-              <div className='prose'>{section.content}</div>
+              <div className='prose dark:prose-invert'>{section.content}</div>
             </FullpageSection>
           );
         } else if (section.slides != null) {
@@ -77,7 +77,7 @@ function Slides({
                         />
                       </div>
                     )}
-                    <div className='prose'>{slide.content}</div>
+                    <div className='prose dark:prose-invert'>{slide.content}</div>
                   </FullpageSlide>
                 );
               })}
