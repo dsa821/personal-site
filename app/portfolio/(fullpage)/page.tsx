@@ -1,19 +1,21 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Intro, portfolioData } from './data';
 import styles from './page.module.css';
 
-export const metadata = {
-  title: 'Portfolio',
-  description: "Stuff I've worked on",
-};
+// export const metadata = {
+//   title: 'Portfolio',
+//   description: "Stuff I've worked on",
+// };
 
 export default function Page() {
   return (
     <section className='prose dark:prose-invert max-w-none'>
       <Intro />
-      
+
       {portfolioData.map((data, i) => {
         return (
           <div key={i} className={data.color ? styles[data.color] : ''}>

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import styles from './page.module.css';
 
@@ -23,52 +24,58 @@ export const Intro = () => {
   return (
     <div className='bg-slate-800'>
       <div className={`pt-24 ${styles.section}`}>
-        <h1>ForenSeq Universal Analysis Software</h1>
-        <div>
-          <p>
-            The ForenSeq Universal Analysis Software (UAS) provides a platform
-            for analyzing and managing forensic genomic data, simplifying
-            complex bioinformatics. It brings the power of next-gen sequencing
-            to the field of forensic genomics, and pairs it with first-class UI
-            tools. Users can view a high-level overview of a sample, use the
-            powerful filtering and flagging system to identify areas of
-            interest, and drill down to the allele level to override individual
-            calls. Data can then be exported in various formats such as Excel
-            (*.xlsx) or CODIS (*.cmf), so that users can have full control of
-            their data.
-          </p>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1>ForenSeq Universal Analysis Software</h1>
+          <div>
+            <p>
+              The ForenSeq Universal Analysis Software (UAS) provides a platform
+              for analyzing and managing forensic genomic data, simplifying
+              complex bioinformatics. It brings the power of next-gen sequencing
+              to the field of forensic genomics, and pairs it with first-class
+              UI tools. Users can view a high-level overview of a sample, use
+              the powerful filtering and flagging system to identify areas of
+              interest, and drill down to the allele level to override
+              individual calls. Data can then be exported in various formats
+              such as Excel (*.xlsx) or CODIS (*.cmf), so that users can have
+              full control of their data.
+            </p>
 
-          <p>
-            This application was initially developed at{' '}
-            <Link href='https://www.illumina.com/' target='_blank'>
-              Illumina
-            </Link>{' '}
-            using:
-          </p>
-          <ul>
-            <li>AngularJS</li>
-            <li>Bootstrap</li>
-            <li>.NET Web API</li>
-            <li>Entity Framework</li>
-            <li>PostgreSQL</li>
-          </ul>
+            <p>
+              This application was initially developed at{' '}
+              <Link href='https://www.illumina.com/' target='_blank'>
+                Illumina
+              </Link>{' '}
+              using:
+            </p>
+            <ul>
+              <li>AngularJS</li>
+              <li>Bootstrap</li>
+              <li>.NET Web API</li>
+              <li>Entity Framework</li>
+              <li>PostgreSQL</li>
+            </ul>
 
-          <p>
-            It was later spun off into a separate company as{' '}
-            <Link href='https://www.verogen.com/' target='_blank'>
-              Verogen
-            </Link>{' '}
-            where it was rebuilt with a fresh tech stack:
-          </p>
-          <ul>
-            <li>Angular</li>
-            <li>Angular Material</li>
-            <li>Tailwind CSS</li>
-            <li>.NET Core Web API</li>
-            <li>Entity Framework Core</li>
-            <li>PostgreSQL</li>
-          </ul>
-        </div>
+            <p>
+              It was later spun off into a separate company as{' '}
+              <Link href='https://www.verogen.com/' target='_blank'>
+                Verogen
+              </Link>{' '}
+              where it was rebuilt with a fresh tech stack:
+            </p>
+            <ul>
+              <li>Angular</li>
+              <li>Angular Material</li>
+              <li>Tailwind CSS</li>
+              <li>.NET Core Web API</li>
+              <li>Entity Framework Core</li>
+              <li>PostgreSQL</li>
+            </ul>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
