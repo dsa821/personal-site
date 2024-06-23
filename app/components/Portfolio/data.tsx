@@ -234,10 +234,10 @@ export const portfolioData: SectionData[] = [
     },
     content: (
       <p>
-        Sample analyses can be grouped by users into projects, as an
-        organization tool. The landing page for a project in v1 was rather
-        simplistic, and was in fact just a way for them to access their reports
-        they had generated.
+        Projects are used as an organization tool for users to group related
+        samples together (such as by case). The landing page for a project in v1
+        was rather simplistic, and was in fact just a way for them to access
+        their reports they had generated.
       </p>
     ),
   },
@@ -254,11 +254,11 @@ export const portfolioData: SectionData[] = [
       <>
         <p>
           The v2 project page gives users much more powerful tools for working
-          with their sample analyses. By putting them into a table format, I can
-          now add sorting and filtering options for users to take advantage of.
-          One particularly useful feature is the ability to filter for a
-          specific flag, for example to isolate all samples which have a locus
-          that triggered an <b>Interpretation Threshold</b> flag.
+          with their sample analyses. By putting the analyses into a table
+          format, I can now add sorting and filtering options for users to take
+          advantage of. One particularly useful feature is the ability to filter
+          for a specific flag - for example to isolate all samples which have a
+          locus that triggered an <b>Interpretation Threshold</b> flag.
         </p>
         <PortfolioImage
           src='/images/forenseq/v2/project-details-sample-flags-tooltip.png'
@@ -286,14 +286,16 @@ export const portfolioData: SectionData[] = [
 
     content: (
       <p>
-        Analysis of mitochondrial DNA gave me the unique opportunity to come up
-        with an innovative custom data visualization using the power of D3.js.
-        Since mtDNA is circular in shape, the visual on the left takes a simple
-        line graph and wraps it into a circle. Markers along the outer edge help
-        indicate areas with high concentrations of variants and other flags. The
-        component on the right allows the user to see the full genomic data at
-        each position, as well as giving them precise control over what section
-        of the DNA to view.
+        Mitochondrial DNA analysis is a unique use case which gave me the
+        opportunity to come up with an innovative custom data visualization
+        using the power of D3.js. Since mtDNA is circular in shape, the visual
+        on the left takes a simple line graph and wraps it into a circle.
+        Markers along the outer edge help indicate areas with high
+        concentrations of variants and other flags. The component on the right
+        allows the user to see the full genomic data at each position, as well
+        as giving them precise control over what section of the DNA to view. The
+        two components are synced so that updating the genomic position in one
+        will update the position in the other.
       </p>
     ),
   },
