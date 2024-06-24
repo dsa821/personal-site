@@ -1,6 +1,6 @@
 import './styles/global.css';
 import type { Metadata } from 'next';
-import { Inconsolata } from 'next/font/google';
+import { Inconsolata, Inter } from 'next/font/google';
 
 import { baseUrl } from './sitemap';
 
@@ -35,9 +35,14 @@ export const metadata: Metadata = {
 const cx = (...classes) => classes.filter(Boolean).join(' ');
 
 // Fonts
-const bodyFont = Inconsolata({
+const bodyFont = Inter({
   subsets: ['latin'],
   display: 'swap',
+});
+const headerFont = Inconsolata({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-header',
 });
 
 export default function RootLayout({
@@ -50,10 +55,11 @@ export default function RootLayout({
       lang='en'
       className={cx(
         'text-white bg-gradient-to-br from-slate-700 min-h-lvh',
-        bodyFont.className
+        bodyFont.className,
+        headerFont.variable
       )}
     >
-      {children}
+      <body className='antialiased'>{children}</body>
     </html>
   );
 }
