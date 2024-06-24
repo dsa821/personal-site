@@ -42,7 +42,7 @@ const bodyFont = Inter({
 const headerFont = Inconsolata({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-header'
+  variable: '--font-header',
 });
 
 export default function RootLayout({
@@ -59,7 +59,7 @@ export default function RootLayout({
         headerFont.variable
       )}
     >
-      {children}
+      <body className='antialiased'>{children}</body>
     </html>
   );
 }

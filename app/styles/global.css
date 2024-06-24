@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @import 'react-photo-view/dist/react-photo-view.css';
-@import './fullpagejs.overrides.css';
 
 ::selection {
   background-color: #47a3f3;

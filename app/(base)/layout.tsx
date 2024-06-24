@@ -6,7 +6,7 @@ import { Navbar } from '../components/nav';
 import React from 'react';
 
 export const metadata = {
-  title: 'dsa.devs',
+  title: 'dsa.dev',
   description: 'Personal website for Daniel Sa',
 };
 
@@ -15,15 +15,13 @@ type LayoutProps = {
 };
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <body className='antialiased max-w-3xl mx-4 mt-8 md:mx-auto'>
-      <main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
-        <Navbar />
-        {children}
-        <Footer />
-        <Analytics />
-        <SpeedInsights />
-      </main>
-    </body>
+    <main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 max-w-3xl mx-4 md:mx-auto'>
+      <Navbar />
+      {children}
+      <Footer />
+      <Analytics />
+      <SpeedInsights />
+    </main>
   );
 };
 
