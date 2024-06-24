@@ -55,16 +55,22 @@ export const Intro = () => {
           <h1>ForenSeq Universal Analysis Software</h1>
           <div>
             <p>
-              The ForenSeq Universal Analysis Software (UAS) provides a platform
-              for analyzing and managing forensic genomic data, simplifying
-              complex bioinformatics. It brings the power of next-gen sequencing
-              to the field of forensic genomics, and pairs it with first-class
-              UI tools. Users can view a high-level overview of a sample, use
-              the powerful filtering and flagging system to identify areas of
-              interest, and drill down to the allele level to override
-              individual calls. Data can then be exported in various formats
-              such as Excel (*.xlsx) or CODIS (*.cmf), so that users can have
-              full control of their data.
+              The{' '}
+              <Link
+                href='https://verogen.com/products/universal-analysis-software/'
+                target='_blank'
+              >
+                ForenSeq Universal Analysis Software (UAS)
+              </Link>{' '}
+              provides a platform for analyzing and managing forensic genomic
+              data, simplifying complex bioinformatics. It brings the power of
+              next-gen sequencing to the field of forensic genomics, and pairs
+              it with first-class UI tools. Users can view a high-level overview
+              of a sample, use the powerful filtering and flagging system to
+              identify areas of interest, and drill down to the allele level to
+              override individual calls. Data can then be exported in various
+              formats such as Excel (*.xlsx) or CODIS (*.cmf), so that users can
+              have full control of their data.
             </p>
 
             <p>
@@ -152,7 +158,7 @@ export const portfolioData: SectionData[] = [
     anchor: 'v2-locus-overview-filters',
     title: 'v2 Locus Overview - Filters',
     img: {
-      src: '/images/forenseq/v2/locus-overview-filters-flags.png',
+      src: '/images/forenseq/v2/strlord-results-filter.png',
       alt: 'ForenSeq v2 Locus Overview Filters',
       width: 1000,
     },
@@ -295,7 +301,38 @@ export const portfolioData: SectionData[] = [
         allows the user to see the full genomic data at each position, as well
         as giving them precise control over what section of the DNA to view. The
         two components are synced so that updating the genomic position in one
-        will update the position in the other.
+        will update the position in the other, with D3.js powering smooth
+        animations in the visual.
+      </p>
+    ),
+  },
+
+  // Kintel HT
+  {
+    color: 'bg-v2',
+    anchor: 'v2-forensic-genealogy',
+    title: 'v2 Forensic Genealogy',
+    img: {
+      src: '/images/forenseq/v2/family-tree.png',
+      alt: 'ForenSeq v2 Family Tree Diagram',
+    },
+
+    content: (
+      <p>
+        Another custom visualization I built with D3.js was a family tree
+        diagram. This project was about trying to find family tree matches
+        between a known sample and a database of unknown samples (the concept
+        behind how the{' '}
+        <Link
+          href='https://en.wikipedia.org/wiki/Joseph_James_DeAngelo'
+          target='_blank'
+        >
+          Golden State Killer
+        </Link>{' '}
+        was finally identified). The diagram helps the user quickly identify and
+        visualize the potential pedigree between the two samples. The user can
+        choose to override the calculated pedigree, with custom D3.js animations
+        smoothly updating the diagram.
       </p>
     ),
   },

@@ -7,10 +7,11 @@ import { motion } from 'framer-motion';
 import { Intro, portfolioData } from './data';
 import styles from './styles.module.css';
 import { PortfolioImage } from 'app/components/PortfolioImage';
+import { PhotoProvider } from 'react-photo-view';
 
 export const Portfolio = () => {
   return (
-    <>
+    <PhotoProvider>
       <Intro />
 
       {portfolioData.map((data, i) => {
@@ -45,6 +46,6 @@ export const Portfolio = () => {
           </div>
         );
       })}
-    </>
+    </PhotoProvider>
   );
 };
