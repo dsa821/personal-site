@@ -1,5 +1,7 @@
+import { WorkHistory } from 'app/components/WorkHistory';
+
 export const metadata = {
-  title: 'dsa.dev',
+  title: 'Home',
   description: 'Personal website for Daniel Sa',
 };
 
@@ -10,13 +12,14 @@ export default function Page() {
       <p>
         Hi, I'm Dan! I'm a full stack software engineer with 15+ years of
         experience building web applications to handle complex data,
-        particularly in genomics. I have extensive experience with Angular web
-        applications with C# back-ends and am familiar with other front-end
-        frameworks including React and NextJS.
+        particularly in genomics. I have extensive experience with{' '}
+        <strong>Angular</strong> web applications with <strong>C#</strong>{' '}
+        back-ends and am familiar with other front-end frameworks including{' '}
+        <strong>React</strong> and <strong>NextJS</strong>.
       </p>
-      {/* <div className='my-8'>
-        <BlogPosts />
-      </div> */}
+
+      <h2>Places I've Worked At</h2>
+      <WorkHistory />
     </section>
   );
 }
