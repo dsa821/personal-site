@@ -15,13 +15,15 @@ type LayoutProps = {
 };
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 max-w-3xl mx-4 md:mx-auto'>
+    <>
       <Navbar />
-      {children}
-      <Footer />
-      <Analytics />
-      <SpeedInsights />
-    </main>
+      <main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 pb-8 max-w-3xl mx-4 md:mx-auto'>
+        {children}
+        {/* <Footer /> */}
+        <Analytics />
+        <SpeedInsights />
+      </main>
+    </>
   );
 };
 

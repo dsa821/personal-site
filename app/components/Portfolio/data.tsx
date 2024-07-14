@@ -43,7 +43,7 @@ export const Intro = () => {
   };
 
   return (
-    <div className='bg-slate-800 min-h-lvh'>
+    <div className='bg-gradient-to-br from-slate-800 min-h-lvh'>
       <div className={`pt-24 ${styles.section}`}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -85,7 +85,7 @@ export const Intro = () => {
               where a v2 was built from the ground up.
             </p>
 
-            <p>ForenSeq UAS uses the following technologies:</p>
+            <p>ForenSeq UAS uses the following core technologies:</p>
 
             <motion.ul
               initial='hidden'
@@ -127,6 +127,18 @@ export const portfolioData: SectionData[] = [
           highlighted in orange to help the user quickly identify what needs
           manual attention.
         </p>
+
+        <p>
+          This iteration was built mostly using the now-defunct{' '}
+          <Link href='https://angularjs.org/' target='_blank'>
+            AngularJS
+          </Link>{' '}
+          along with{' '}
+          <Link href='https://getbootstrap.com/docs/3.4/' target='_blank'>
+            Bootstrap v3
+          </Link>
+          .
+        </p>
       </>
     ),
   },
@@ -141,16 +153,41 @@ export const portfolioData: SectionData[] = [
     },
 
     content: (
-      <p>
-        In v2, there were several things from the v1 design that I wanted to
-        improve on. One of the most obvious changes is the addition of a bar
-        graph to each individual locus box, showing the alleles and their read
-        counts. This gives the users a lot more data at their fingertips to make
-        decisions without having to drill down to the locus details level. It
-        also has the effect of resembling the output of capillary
-        electrophoresis, which is the old sequencing technology that forensics
-        labs are most familiar with.
-      </p>
+      <>
+        <p>
+          In v2, there were several things from the v1 design that I wanted to
+          improve on. One of the most obvious changes is the addition of a bar
+          graph to each individual locus box, showing the alleles and their read
+          counts. This gives the users a lot more data at their fingertips to
+          make decisions without having to drill down to the locus details
+          level. It also has the effect of resembling the output of capillary
+          electrophoresis, which is the old sequencing technology that forensics
+          labs are most familiar with.
+        </p>
+        <p>
+          The tech stack also needed to be updated, since AngularJS was on its
+          way out. ForenSeq UAS v2 is written in the new{' '}
+          <Link href='https://angular.dev/' target='_blank'>
+            Angular framework
+          </Link>{' '}
+          along with{' '}
+          <Link href='https://material.angular.io/' target='_blank'>
+            Angular Material
+          </Link>{' '}
+          for most basic UI components. The charts are implemented using{' '}
+          <Link href='https://plotly.com/javascript/' target='_blank'>
+            Plotly.js
+          </Link>{' '}
+          and taking advantage of{' '}
+          <Link
+            href='https://material.angular.io/cdk/scrolling/overview#virtual-scrolling'
+            target='_blank'
+          >
+            Angular Material's virtual scrolling
+          </Link>{' '}
+          to minimize the amount of elements in the DOM.
+        </p>
+      </>
     ),
   },
   {
@@ -179,6 +216,16 @@ export const portfolioData: SectionData[] = [
           instead. This gave us the space needed, and also gave us options to
           customize the filter sidebar for each tab.
         </p>
+        <p>
+          The filtering (and the state management solution for the overall app)
+          is powered by{' '}
+          <Link href='https://www.ngxs.io/' target='_blank'>
+            NGXS
+          </Link>
+          . Filter changes raise NGXS Actions which then perform the necessary
+          filtering in action handlers and update the state with the list of
+          filtered loci.
+        </p>
       </>
     ),
   },
@@ -195,16 +242,30 @@ export const portfolioData: SectionData[] = [
     },
 
     content: (
-      <p>
-        Locus details are the most granular level of data the user can view.
-        Here the user can see information on each allele that was detected in
-        the locus, view their full sequence, and even override calls. This is
-        also the only way that the user can see read counts for each allele,
-        represented as a bar graph. In v1 this section appeared as a popover,
-        which limited the available horizontal space for displaying the data,
-        and also blocked other UI elements that the user may have wanted to
-        interact with.
-      </p>
+      <>
+        <p>
+          Locus details are the most granular level of data the user can view.
+          Here the user can see information on each allele that was detected in
+          the locus, view their full sequence, and even override calls. This is
+          also the only way that the user can see read counts for each allele,
+          represented as a bar graph. In v1 this section appeared as a popover,
+          which limited the available horizontal space for displaying the data,
+          and also blocked other UI elements that the user may have wanted to
+          interact with.
+        </p>
+        <p>
+          In v1, this feature was developed using{' '}
+          <Link href='https://github.com/qTip2/qTip2' target='_blank'>
+            qTip.js
+          </Link>
+          , a jQuery plugin which has since been deprecated. The tables and
+          charts were built with{' '}
+          <Link href='https://www.telerik.com/kendo-ui' target='_blank'>
+            Kendo UI
+          </Link>
+          .
+        </p>
+      </>
     ),
   },
   {
@@ -242,8 +303,8 @@ export const portfolioData: SectionData[] = [
       <p>
         Projects are used as an organization tool for users to group related
         samples together (such as by case). The landing page for a project in v1
-        was rather simplistic, and was in fact just a way for them to access
-        their reports they had generated.
+        was rather simplistic, and was in fact just a way for them to download
+        their Excel reports they had generated.
       </p>
     ),
   },
@@ -294,15 +355,18 @@ export const portfolioData: SectionData[] = [
       <p>
         Mitochondrial DNA analysis is a unique use case which gave me the
         opportunity to come up with an innovative custom data visualization
-        using the power of D3.js. Since mtDNA is circular in shape, the visual
-        on the left takes a simple line graph and wraps it into a circle.
-        Markers along the outer edge help indicate areas with high
-        concentrations of variants and other flags. The component on the right
-        allows the user to see the full genomic data at each position, as well
-        as giving them precise control over what section of the DNA to view. The
-        two components are synced so that updating the genomic position in one
-        will update the position in the other, with D3.js powering smooth
-        animations in the visual.
+        using the power of{' '}
+        <Link href='https://d3js.org/' target='_blank'>
+          D3.js
+        </Link>
+        . Since mtDNA is circular in shape, the visual on the left takes a
+        simple line graph and wraps it into a circle. Markers along the outer
+        edge help indicate areas with high concentrations of variants and other
+        flags. The component on the right allows the user to see the full
+        genomic data at each position, as well as giving them precise control
+        over what section of the DNA to view. The two components are synced so
+        that updating the genomic position in one will update the position in
+        the other, with D3.js powering smooth animations in the visual.
       </p>
     ),
   },

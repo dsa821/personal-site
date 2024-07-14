@@ -54,7 +54,7 @@ export default function RootLayout({
     <html
       lang='en'
       className={cx(
-        'text-white bg-gradient-to-br from-slate-700 min-h-lvh',
+        'text-white bg-gradient-to-br from-slate-800 min-h-lvh',
         bodyFont.className,
         headerFont.variable
       )}

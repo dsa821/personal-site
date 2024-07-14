@@ -16,17 +16,16 @@ type LayoutProps = {
 };
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <main>
-      <div className='relative max-w-3xl mx-4 md:mx-auto'>
-        <div className='absolute top-8 z-10'>
-          <Navbar />
-        </div>
-      </div>
-      {children}
-      {/* <Footer /> */}
-      <Analytics />
-      <SpeedInsights />
-    </main>
+    <>
+      <Navbar />
+
+      <main>
+        {children}
+        {/* <Footer /> */}
+        <Analytics />
+        <SpeedInsights />
+      </main>
+    </>
   );
 };
 
