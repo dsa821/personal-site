@@ -15,9 +15,9 @@ export const WorkHistory: React.FC = () => {
           <motion.div
             key={x.companyName}
             className='text-slate-600 bg-gradient-to-br from-slate-300 to-slate-400 p-4 rounded-xl shadow'
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.75 }}
             viewport={{ margin: '-50px', once: true }}
           >
             <Link

@@ -1,0 +1,46 @@
+.root {
+  @apply prose dark:prose-invert;
+  @apply flex flex-wrap;
+  max-width: none;
+
+	.accent {
+		@apply text-yellow-300;
+	}
+
+  .sidebar {
+    @apply w-full;
+    @apply md:flex-none md:w-64 md:fixed;
+
+    .nav {
+      @apply md:mt-16 leading-loose;
+
+      .nav-menu-item {
+        @apply block lowercase no-underline;
+        @apply duration-150 hover:text-yellow-300;
+      }
+
+      .icons {
+        @apply mt-8 md:mt-16 flex gap-4;
+
+        .nav-menu-icon {
+          @apply duration-150 hover:text-yellow-300;
+        }
+      }
+    }
+  }
+
+  .content {
+    @apply flex-auto;
+    @apply md:ml-64;
+
+    .subheading {
+      @apply text-lg uppercase;
+      color: #778da9;
+      scroll-margin-top: 1rem;
+
+      &:first-child {
+        @apply md:mt-0;
+      }
+    }
+  }
+}

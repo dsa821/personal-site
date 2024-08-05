@@ -16,8 +16,8 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Navbar />
-      <main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 pb-8 max-w-3xl mx-4 md:mx-auto'>
+      {/* <Navbar /> */}
+      <main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-4 pb-8 max-w-5xl mx-4 md:mx-auto'>
         {children}
         {/* <Footer /> */}
         <Analytics />
