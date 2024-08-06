@@ -127,7 +127,7 @@ export default function Page() {
           </nav>
         </section>
 
-        <section className={styles.content}>
+        <section className={styles['page-content']}>
           <h2 id='about' className={styles.subheading}>
             About
           </h2>

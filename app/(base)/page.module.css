@@ -34,7 +34,7 @@
     }
   }
 
-  .content {
+  .page-content {
     @apply flex-auto;
     @apply md:ml-64;
 		@apply font-light;
