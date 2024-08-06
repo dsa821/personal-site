@@ -143,12 +143,7 @@ export default function Page() {
             </p>
 
             <p>
-              Lorem ipsum odor amet, consectetuer adipiscing elit. Mi quis mus
-              faucibus diam mauris himenaeos. Leo dictum lectus velit risus
-              montes sit. Fusce eget consequat odio rhoncus lacus quis sed erat.
-              Id accumsan quis fames porta ante sit elementum maximus. Lacinia
-              adipiscing erat lorem et praesent habitant accumsan phasellus. Ex
-              malesuada felis pulvinar non nulla placerat scelerisque amet.
+              I believe in using the power of technology to make a better world for everyone, which is one of the main reasons I enjoy working in the field of genomics. Even though my expertise is with the software and not the science, I have had the great fortune of working with many talented and passionate people across many disciplines, who are also motivated to create a better future.
             </p>
 
             <div className={styles.interests}>
