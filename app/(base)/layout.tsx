@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       {/* <Navbar /> */}
-      <main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-4 pb-8 max-w-5xl mx-4 md:mx-auto'>
+      <main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-8 pb-8 max-w-5xl mx-4 md:mx-auto'>
         {children}
         {/* <Footer /> */}
         <Analytics />

@@ -1,18 +1,23 @@
 .root {
-  @apply prose dark:prose-invert;
+	@apply prose dark:prose-invert;
   @apply flex flex-wrap;
+	--tw-prose-invert-body: #fff;
   max-width: none;
 
-	.accent {
-		@apply text-yellow-300;
-	}
+  .accent {
+    @apply text-yellow-300;
+  }
 
   .sidebar {
     @apply w-full;
     @apply md:flex-none md:w-64 md:fixed;
 
+    .heading {
+      @apply mb-0;
+    }
+
     .nav {
-      @apply md:mt-16 leading-loose;
+      @apply mt-8 md:mt-12 leading-loose;
 
       .nav-menu-item {
         @apply block lowercase no-underline;
@@ -20,7 +25,7 @@
       }
 
       .icons {
-        @apply mt-8 md:mt-16 flex gap-4;
+        @apply mt-8 md:mt-12 flex gap-4;
 
         .nav-menu-icon {
           @apply duration-150 hover:text-yellow-300;
@@ -32,14 +37,25 @@
   .content {
     @apply flex-auto;
     @apply md:ml-64;
+		@apply font-light;
 
     .subheading {
-      @apply text-lg uppercase;
+      @apply text-sm uppercase tracking-widest mt-16;
       color: #778da9;
       scroll-margin-top: 1rem;
 
       &:first-child {
-        @apply md:mt-0;
+        @apply md:mt-24;
+      }
+    }
+
+    .interests {
+      .label {
+        @apply lowercase tracking-widest mt-4;
+        color: #778da9;
+      }
+      .items {
+        @apply flex gap-4;
       }
     }
   }

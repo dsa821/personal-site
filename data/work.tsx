@@ -3,7 +3,7 @@ import React from "react";
 type WorkHistoryData = {
   companyName: string;
   companyUrl: string;
-  logoFilename: string;
+  logoFilename?: string;
   jobTitle: string;
   dates: string;
   description?: React.ReactNode;
@@ -13,7 +13,7 @@ export const workHistory: WorkHistoryData[] = [
   {
     companyName: "Verogen",
     companyUrl: "https://www.verogen.com/",
-    logoFilename: "verogen-qiagen-logo.png",
+    logoFilename: "verogen-qiagen-logo.svg",
     jobTitle: "Senior Staff Software Engineer",
     dates: "AUG 2017 - Present",
     content: (
@@ -58,7 +58,7 @@ export const workHistory: WorkHistoryData[] = [
   {
     companyName: "Illumina",
     companyUrl: "https://www.illumina.com/",
-    logoFilename: "illumina-logo.svg",
+    logoFilename: "illumina-logo-2.svg",
     jobTitle: "Staff Software Engineer",
     dates: "MAR 2011 - AUG 2017",
     content: (
@@ -93,8 +93,7 @@ export const workHistory: WorkHistoryData[] = [
 
   {
     companyName: "1parkplace",
-    companyUrl: "https://www.1parkplace.com/",
-    logoFilename: "1parkplace-logo.jpg",
+    companyUrl: "https://www.1parkplace.com/",    
     jobTitle: "Software Engineer II",
     dates: "JAN 2008 - MAR 2011",
     content: (
