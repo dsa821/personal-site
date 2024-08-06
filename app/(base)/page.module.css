@@ -1,7 +1,7 @@
 .root {
-	@apply prose dark:prose-invert;
+  @apply prose dark:prose-invert;
   @apply flex flex-wrap;
-	--tw-prose-invert-body: #fff;
+  --tw-prose-invert-body: #fff;
   max-width: none;
 
   .accent {
@@ -33,30 +33,28 @@
       }
     }
   }
+}
 
-  .page-content {
-    @apply flex-auto;
-    @apply md:ml-64;
-		@apply font-light;
+.content {
+  @apply flex-auto font-light md:ml-64;
 
-    .subheading {
-      @apply text-sm uppercase tracking-widest mt-16;
-      color: #778da9;
-      scroll-margin-top: 1rem;
+  .subheading {
+    @apply text-sm uppercase tracking-widest mt-16;
+    color: #778da9;
+    scroll-margin-top: 1rem;
 
-      &:first-child {
-        @apply md:mt-24;
-      }
+    &:first-child {
+      @apply md:mt-24;
     }
+  }
+}
 
-    .interests {
-      .label {
-        @apply lowercase tracking-widest mt-4;
-        color: #778da9;
-      }
-      .items {
-        @apply flex gap-4;
-      }
-    }
+.interests {
+  .label {
+    @apply lowercase tracking-widest mt-4;
+    color: #778da9;
+  }
+  .items {
+    @apply flex gap-4;
   }
 }
