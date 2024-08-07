@@ -1,9 +1,11 @@
+import { LogoIllumina } from "app/components/icons/LogoIllumina";
+import { LogoVerogen } from "app/components/icons/LogoVerogen";
 import React from "react";
 
-type WorkHistoryData = {
+export type WorkHistoryData = {
   companyName: string;
   companyUrl: string;
-  logoFilename?: string;
+  logo?: React.ReactNode;
   jobTitle: string;
   dates: string;
   description?: React.ReactNode;
@@ -13,7 +15,7 @@ export const workHistory: WorkHistoryData[] = [
   {
     companyName: "Verogen",
     companyUrl: "https://www.verogen.com/",
-    logoFilename: "verogen-qiagen-logo.svg",
+    logo: <LogoVerogen />,
     jobTitle: "Senior Staff Software Engineer",
     dates: "AUG 2017 - Present",
     content: (
@@ -58,7 +60,7 @@ export const workHistory: WorkHistoryData[] = [
   {
     companyName: "Illumina",
     companyUrl: "https://www.illumina.com/",
-    logoFilename: "illumina-logo-2.svg",
+    logo: <LogoIllumina />,
     jobTitle: "Staff Software Engineer",
     dates: "MAR 2011 - AUG 2017",
     content: (

@@ -1,7 +1,12 @@
-import { WorkHistory } from 'app/components/WorkHistory';
-import styles from './page.module.css';
 import Link from 'next/link';
 import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
+
+import { workHistory } from 'data/work';
+import { WorkHistory } from 'app/components/WorkHistory';
+
+import styles from './page.module.css';
+import { Projects } from 'app/components/Projects';
+import { portfolioData } from 'data/portfolio';
 
 export const metadata = {
   title: 'Home',
@@ -174,11 +179,12 @@ export default function Page() {
           <h2 id='experience' className={styles.subheading}>
             Experience
           </h2>
-          <WorkHistory />
+          <WorkHistory data={workHistory} />
 
           <h2 id='projects' className={styles.subheading}>
             Projects
           </h2>
+          <Projects data={portfolioData} />
         </section>
       </section>
     </div>

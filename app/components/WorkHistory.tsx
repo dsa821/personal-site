@@ -3,15 +3,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import { workHistory } from 'data/work';
 import Image from 'next/image';
 import Link from 'next/link';
+import { WorkHistoryData } from 'data/work';
 
-export const WorkHistory: React.FC = () => {
+type Props = {
+  data: WorkHistoryData[];
+}
+export const WorkHistory: React.FC<Props> = ({ data }) => {
   return (
     <>
-      <div className='flex flex-col gap-4'>
-        {workHistory.map((x) => (
+      <div className='flex flex-col gap-4 pt-4'>
+        {data.map((x) => (
           <motion.div
             key={x.companyName}
             initial={{ opacity: 0, x: -50 }}
@@ -19,15 +22,10 @@ export const WorkHistory: React.FC = () => {
             transition={{ duration: 0.75 }}
             viewport={{ margin: '-50px', once: true }}
           >
-            {x.logoFilename && (
+            {x.logo && (
               <div className='w-40 h-10 relative'>
-                <Link href={x.companyUrl} target='_blank'>
-                  <Image
-                    src={`/images/logos/${x.logoFilename}`}
-                    alt={x.companyName}
-                    fill
-                    className='!my-4'
-                  />
+                <Link href={x.companyUrl} target='_blank' className='fill-slate-500'>
+                  {x.logo}
                 </Link>
               </div>
             )}
