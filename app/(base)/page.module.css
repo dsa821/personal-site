@@ -50,8 +50,10 @@
 }
 
 .interests {
+  @apply flex gap-4 flex-wrap;
+
   .label {
-    @apply lowercase tracking-widest mt-4;
+    @apply font-bold text-sm uppercase tracking-widest mb-2;
     color: #778da9;
   }
   .items {
