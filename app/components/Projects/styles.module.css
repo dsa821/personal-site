@@ -1,0 +1,12 @@
+.tags {
+  @apply flex flex-wrap gap-4;
+}
+
+.tag {
+	@apply uppercase text-xs text-slate-800 font-bold tracking-wide px-2 py-1 rounded;
+	background-color: var(--color-accent);
+}
+
+.accent {
+	color: var(--color-accent);
+}

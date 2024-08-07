@@ -3,38 +3,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import { workHistory } from 'data/work';
 import Image from 'next/image';
 import Link from 'next/link';
+import { WorkHistoryData } from 'data/work';
 
-export const WorkHistory: React.FC = () => {
+type Props = {
+  data: WorkHistoryData[];
+}
+export const WorkHistory: React.FC<Props> = ({ data }) => {
   return (
     <>
-      <div className='flex flex-col gap-4'>
-        {workHistory.map((x) => (
+      <div className='flex flex-col gap-4 pt-4'>
+        {data.map((x) => (
           <motion.div
             key={x.companyName}
-            className='text-slate-600 bg-gradient-to-br from-slate-300 to-slate-400 p-4 rounded-xl shadow'
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.75 }}
             viewport={{ margin: '-50px', once: true }}
           >
-            <Link
-              href={x.companyUrl}
-              target='_blank'
-              className='flex justify-center'
-            >
-              <Image
-                src={`/images/logos/${x.logoFilename}`}
-                alt={x.companyName}
-                width={280}
-                height={70}
-                className='my-0'
-              />
-            </Link>
-            <div className="text-slate-600 text-lg font-bold mt-2">{x.jobTitle}</div>
-            <div className='text-slate-500 text-xs font-bold'>{x.dates}</div>
+            {x.logo && (
+              <div className='w-40 h-10 relative'>
+                <Link href={x.companyUrl} target='_blank' className='fill-slate-500'>
+                  {x.logo}
+                </Link>
+              </div>
+            )}
+            <div className='text-lg font-bold mt-4'>
+              {x.jobTitle}, {x.companyName}
+            </div>
+            <div className='text-slate-500 text-sm font-bold uppercase tracking-wide'>
+              {x.dates}
+            </div>
 
             <div>{x.content}</div>
           </motion.div>

@@ -35,6 +35,9 @@
 
 html {
   min-width: 360px;
+  scroll-behavior: smooth;
+  /* matches yellow-300 in Tailwind */
+  --color-accent: #fde047;
 }
 
 h1,

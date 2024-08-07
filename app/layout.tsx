@@ -1,6 +1,6 @@
 import './styles/global.css';
 import type { Metadata } from 'next';
-import { Inconsolata, Inter } from 'next/font/google';
+import { Inconsolata, Inter, DM_Sans } from 'next/font/google';
 
 import { baseUrl } from './sitemap';
 
@@ -35,11 +35,11 @@ export const metadata: Metadata = {
 const cx = (...classes) => classes.filter(Boolean).join(' ');
 
 // Fonts
-const bodyFont = Inter({
+const bodyFont = DM_Sans({
   subsets: ['latin'],
   display: 'swap',
 });
-const headerFont = Inconsolata({
+const headerFont = DM_Sans({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-header',
