@@ -29,7 +29,7 @@ export const WorkHistory: React.FC<Props> = ({ data }) => {
                 </Link>
               </div>
             )}
-            <div className='text-lg font-bold mt-8'>
+            <div className='text-lg font-bold mt-4'>
               {x.jobTitle}, {x.companyName}
             </div>
             <div className='text-slate-500 text-sm font-bold uppercase tracking-wide'>

@@ -21,6 +21,7 @@ export const portfolioData: PortfolioData[] = [
 		imgUrl: '/images/forenseq/v2/locus-overview.png',
     tags: [
       "Angular",
+      "Angular Material",
       "Tailwind CSS",
       ".NET Core",
       "Entity Framework",
