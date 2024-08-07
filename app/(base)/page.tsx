@@ -137,7 +137,7 @@ export default function Page() {
             <div className={styles.interests}>
               {interests.map((interest) => {
                 return (
-                  <div key={interest.label} className='flex-auto'>
+                  <div key={interest.label}>
                     <div className={styles.label}>{interest.label}</div>
                     <div className={styles.items}>
                       {interest.items.map((item) => {

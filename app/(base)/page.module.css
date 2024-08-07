@@ -1,5 +1,5 @@
 .root {
-  @apply prose dark:prose-invert;
+  @apply prose prose-invert;
   @apply flex flex-wrap;
   --tw-prose-invert-body: #fff;
   max-width: none;
@@ -50,13 +50,13 @@
 }
 
 .interests {
-  @apply flex gap-4 flex-wrap;
+  @apply grid grid-cols-2 sm:grid-cols-4 gap-4;
 
   .label {
     @apply font-bold text-sm uppercase tracking-widest mb-2;
     color: #778da9;
   }
   .items {
-    @apply flex gap-4;
+    @apply text-balance;
   }
 }
