@@ -34,50 +34,42 @@ export const UasIntro = () => {
 
   return (
     <div>
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.75 }}
-        viewport={{ once: true }}
-      >
-        <div className={`pt-24 ${styles.section}`}>
-          <h1>ForenSeq Universal Analysis Software</h1>
-          <TagList tags={tags} />
-          <div>
-            <p>
-              The{' '}
-              <Link
-                href='https://verogen.com/products/universal-analysis-software/'
-                target='_blank'
-              >
-                ForenSeq Universal Analysis Software (UAS)
-              </Link>{' '}
-              provides a platform for analyzing and managing forensic genomic
-              data, simplifying complex bioinformatics. It brings the power of
-              next-gen sequencing to the field of forensic genomics, and pairs
-              it with first-class UI tools. Users can view a high-level overview
-              of a sample, use the powerful filtering and flagging system to
-              identify areas of interest, and drill down to the allele level to
-              override individual calls. Data can then be exported in various
-              formats such as Excel (*.xlsx) or CODIS (*.cmf), so that users can
-              have full control of their data.
-            </p>
+      <div className={`pt-4 ${styles.section}`}>
+        <h1 className="text-3xl text-balance">ForenSeq Universal Analysis Software</h1>
+        <TagList tags={tags} />
+        <div>
+          <p>
+            The{' '}
+            <Link
+              href='https://verogen.com/products/universal-analysis-software/'
+              target='_blank'
+            >
+              ForenSeq Universal Analysis Software (UAS)
+            </Link>{' '}
+            provides a platform for analyzing and managing forensic genomic
+            data, simplifying complex bioinformatics. It brings the power of
+            next-gen sequencing to the field of forensic genomics, and pairs it
+            with first-class UI tools. Users can view a high-level overview of a
+            sample, use the powerful filtering and flagging system to identify
+            areas of interest, and drill down to the allele level to override
+            individual calls. Data can then be exported in various formats such
+            as Excel (*.xlsx) or CODIS (*.cmf), so that users can have full
+            control of their data.
+          </p>
 
-            <p>
-              The initial v1 of this application was developed at{' '}
-              <Link href='https://www.illumina.com/' target='_blank'>
-                Illumina
-              </Link>
-              . It was later spun off into a separate company as{' '}
-              <Link href='https://www.verogen.com/' target='_blank'>
-                Verogen
-              </Link>{' '}
-              where a v2 was built from the ground up.
-            </p>
-          </div>
+          <p>
+            The initial v1 of this application was developed at{' '}
+            <Link href='https://www.illumina.com/' target='_blank'>
+              Illumina
+            </Link>
+            . It was later spun off into a separate company as{' '}
+            <Link href='https://www.verogen.com/' target='_blank'>
+              Verogen
+            </Link>{' '}
+            where a v2 was built from the ground up.
+          </p>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

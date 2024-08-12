@@ -18,7 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-8 pb-8 max-w-5xl mx-4 md:mx-auto'>
         <Navbar />
-        <section className='flex-auto md:ml-64'>{children}</section>
+        <section className='flex-auto md:ml-64 pb-16'>{children}</section>
         {/* <Footer /> */}
         <Analytics />
         <SpeedInsights />

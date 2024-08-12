@@ -25,7 +25,7 @@ export const Portfolio = () => {
               <div className={styles.section}>
                 {data.title && (
                   // <Link href={`#${data.anchor}`} id={data.anchor} className='jump-link'>
-                    <h2>{data.title}</h2>
+                    <h2 className="text-balance">{data.title}</h2>
                   // </Link>
                 )}
 

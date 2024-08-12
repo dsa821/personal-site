@@ -16,7 +16,7 @@ type Props = {
 };
 export const Projects: React.FC<Props> = ({ data }) => {
   return (
-    <div className='flex flex-col gap-8'>
+    <div className='flex flex-col gap-16'>
       {data.map((x) => {
         return (
           <motion.div
@@ -25,7 +25,7 @@ export const Projects: React.FC<Props> = ({ data }) => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.75 }}
             viewport={{ margin: '-50px', once: true }}
-            className='flex flex-wrap gap-4'
+            className='flex flex-wrap gap-8'
           >
             <div className='w-full h-36 lg:w-64 flex-none relative'>
               {x.imgUrl && (
