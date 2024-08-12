@@ -16,10 +16,10 @@ export const Portfolio = () => {
         return (
           <div key={i} className={data.color ? styles[data.color] : ''}>
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.75 }}
               viewport={{ margin: '-150px', once: true }}
             >
               <div className={styles.section}>

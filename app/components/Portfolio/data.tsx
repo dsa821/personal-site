@@ -33,16 +33,17 @@ export const UasIntro = () => {
   ];
 
   return (
-    <div className='min-h-lvh pb-8 md:pb-8'>
-      <div className={`pt-24 pb-16 ${styles.section}`}>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
+    <div>
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.75 }}
+        viewport={{ once: true }}
+      >
+        <div className={`pt-24 ${styles.section}`}>
           <h1>ForenSeq Universal Analysis Software</h1>
+          <TagList tags={tags} />
           <div>
             <p>
               The{' '}
@@ -74,13 +75,9 @@ export const UasIntro = () => {
               </Link>{' '}
               where a v2 was built from the ground up.
             </p>
-
-            <p>ForenSeq UAS uses the following core technologies:</p>
-
-            <TagList tags={tags} />
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </div>
   );
 };

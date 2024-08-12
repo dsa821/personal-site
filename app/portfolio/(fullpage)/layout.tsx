@@ -1,13 +1,14 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-import Footer from '../components/Footer';
-import { Navbar } from '../components/Sidenav';
+// import Footer from 'app/components/footer';
+import { Topnav } from 'app/components/Topnav';
 import React from 'react';
 
 export const metadata = {
-  title: 'danielsa.dev',
-  description: 'Personal website for Daniel Sa',
+  title: 'Portfolio - ForenSeq UAS - dsa.dev',
+  description:
+    'Demonstrating the ForenSeq Universal Analysis Software, developed first for Illumina and then for Verogen (now QIAGEN)',
 };
 
 type LayoutProps = {
@@ -16,9 +17,10 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <main className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-8 pb-8 max-w-5xl mx-4 md:mx-auto'>
-        <Navbar />
-        <section className='flex-auto md:ml-64'>{children}</section>
+      <Topnav />
+
+      <main>
+        {children}
         {/* <Footer /> */}
         <Analytics />
         <SpeedInsights />
