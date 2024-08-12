@@ -1,9 +1,8 @@
+import React from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-// import Footer from 'app/components/footer';
 import { Topnav } from 'app/components/Topnav';
-import React from 'react';
 
 export const metadata = {
   title: 'Portfolio - ForenSeq UAS - dsa.dev',
@@ -21,7 +20,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       <main>
         {children}
-        {/* <Footer /> */}
         <Analytics />
         <SpeedInsights />
       </main>

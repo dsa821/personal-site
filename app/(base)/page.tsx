@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-import { projectData } from 'data/projects';
-import { workHistory } from 'data/work';
+import { Contact } from 'app/components/Contact';
 import { Projects } from 'app/components/Projects';
 import { WorkHistory } from 'app/components/WorkHistory';
+
+import { projectData } from 'data/projects';
+import { workHistory } from 'data/work';
 
 import styles from './page.module.css';
 
@@ -103,6 +105,11 @@ export default function Page() {
             Projects
           </h2>
           <Projects data={projectData} />
+
+          <h2 id='contact' className={styles.subheading}>
+            Contact
+          </h2>
+          <Contact />
         </section>
       </section>
     </div>

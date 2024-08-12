@@ -1,9 +1,9 @@
 import { IconDownload, IconMail } from '@tabler/icons-react';
 import Link from 'next/link';
 
-export const Footer = () => {
+export const Contact = () => {
   return (
-    <footer className='p-8'>
+    <div>
       <div className='grid grid-cols-3'>
         <span className='flex gap-4'>
           <IconMail />
@@ -16,10 +16,10 @@ export const Footer = () => {
             href='/docs/Daniel Sa - Senior Staff Software Engineer - Resume.pdf'
             target='_blank'
           >
-            Resume
+            see my resume!
           </Link>
         </span>
       </div>
-    </footer>
+    </div>
   );
 };

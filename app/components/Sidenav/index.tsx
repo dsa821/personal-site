@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons-react';
 
 import styles from './styles.module.css';
 
@@ -16,6 +16,10 @@ const navLinks = [
     displayName: 'Projects',
     href: '/#projects',
   },
+  {
+    displayName: 'Contact',
+    href: '/#contact',
+  },
 ];
 
 const navIcons = [
@@ -29,9 +33,14 @@ const navIcons = [
     href: 'https://www.linkedin.com/in/dansa/',
     icon: <IconBrandLinkedin />,
   },
+  {
+    key: 'Email',
+    href: 'mailto:hi@danielsa.dev',
+    icon: <IconMail />,
+  },
 ];
 
-export function Navbar() {
+export function Sidenav() {
   return (
     <aside className={styles.sidebar}>
       <h1 className={styles.heading}>
