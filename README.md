@@ -1,6 +1,6 @@
 # dsa.dev
 
-Repo for [my personal website](https://dsa-dev.vercel.app).
+Repo for [my personal website](https://www.daniel-sa.dev).
 
 Built with:
 
