@@ -1,13 +1,14 @@
-export type PortfolioData = {
+export type ProjectData = {
   name: string;
   url: string;
+  newWindow?: boolean;
   imgUrl: string;
 
   description: React.ReactNode;
   tags: string[];
 };
 
-export const portfolioData: PortfolioData[] = [
+export const projectData: ProjectData[] = [
   {
     name: "ForenSeq Universal Analysis Software",
     description: (
@@ -40,6 +41,7 @@ export const portfolioData: PortfolioData[] = [
       </>
     ),
     url: "https://hades2-crossroads.vercel.app/",
+    newWindow: true,
 		imgUrl: '/images/hades2-crossroads.png',
     tags: ["Next.js", "Tailwind CSS"],
   },

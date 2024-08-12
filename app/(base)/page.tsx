@@ -1,45 +1,18 @@
 import Link from 'next/link';
-import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 
-import { workHistory } from 'data/work';
+import { Contact } from 'app/components/Contact';
+import { Projects } from 'app/components/Projects';
 import { WorkHistory } from 'app/components/WorkHistory';
 
+import { projectData } from 'data/projects';
+import { workHistory } from 'data/work';
+
 import styles from './page.module.css';
-import { Projects } from 'app/components/Projects';
-import { portfolioData } from 'data/portfolio';
 
 export const metadata = {
   title: 'Home',
   description: 'Personal website for Daniel Sa',
 };
-
-const navLinks = [
-  {
-    displayName: 'About',
-    href: '#about',
-  },
-  {
-    displayName: 'Experience',
-    href: '#experience',
-  },
-  {
-    displayName: 'Projects',
-    href: '#projects',
-  },
-];
-
-const navIcons = [
-  {
-    key: 'Github',
-    href: 'https://github.com/dsa821/',
-    icon: <IconBrandGithub />,
-  },
-  {
-    key: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/dansa/',
-    icon: <IconBrandLinkedin />,
-  },
-];
 
 const interests = [
   {
@@ -74,41 +47,6 @@ export default function Page() {
   return (
     <div>
       <section className={styles.root}>
-        <section className={styles.sidebar}>
-          <h1 className={styles.heading}>
-            dsa<span className={styles.accent}>.</span>dev
-          </h1>
-          <nav className={styles.nav}>
-            <div>
-              {navLinks.map((x) => {
-                return (
-                  <Link
-                    key={x.href}
-                    href={x.href}
-                    className={styles['nav-menu-item']}
-                  >
-                    {x.displayName}
-                  </Link>
-                );
-              })}
-            </div>
-
-            <div className={styles.icons}>
-              {navIcons.map((x) => {
-                return (
-                  <Link
-                    key={x.key}
-                    href={x.href}
-                    className={styles['nav-menu-icon']}
-                  >
-                    {x.icon}
-                  </Link>
-                );
-              })}
-            </div>
-          </nav>
-        </section>
-
         <section className={styles.content}>
           <h2 id='about' className={styles.subheading}>
             About
@@ -166,7 +104,12 @@ export default function Page() {
           <h2 id='projects' className={styles.subheading}>
             Projects
           </h2>
-          <Projects data={portfolioData} />
+          <Projects data={projectData} />
+
+          <h2 id='contact' className={styles.subheading}>
+            Contact
+          </h2>
+          <Contact />
         </section>
       </section>
     </div>

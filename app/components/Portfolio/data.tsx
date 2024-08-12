@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 import styles from './styles.module.css';
 import { PortfolioImage } from 'app/components/PortfolioImage';
+import { TagList } from '../TagList';
 
 export type SectionData = {
   color?: string;
@@ -21,93 +22,59 @@ type ImageData = {
   height?: number;
 };
 
-export const Intro = () => {
-  const ulMotion = {
-    visible: {
-      opacity: 1,
-      transition: {
-        when: 'beforeChildren',
-        staggerChildren: 0.1,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      transition: {
-        when: 'afterChildren',
-      },
-    },
-  };
-  const liMotion = {
-    visible: { opacity: 1, x: 0 },
-    hidden: { opacity: 0, x: 100 },
-  };
+export const UasIntro = () => {
+  const tags = [
+    'Angular',
+    'Angular Material',
+    'Tailwind CSS',
+    '.NET Core',
+    'Entity Framework',
+    'PostgreSQL',
+  ];
 
   return (
-    <div className='bg-gradient-to-br from-slate-800 min-h-lvh'>
-      <div className={`pt-24 ${styles.section}`}>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <h1>ForenSeq Universal Analysis Software</h1>
-          <div>
-            <p>
-              The{' '}
-              <Link
-                href='https://verogen.com/products/universal-analysis-software/'
-                target='_blank'
-              >
-                ForenSeq Universal Analysis Software (UAS)
-              </Link>{' '}
-              provides a platform for analyzing and managing forensic genomic
-              data, simplifying complex bioinformatics. It brings the power of
-              next-gen sequencing to the field of forensic genomics, and pairs
-              it with first-class UI tools. Users can view a high-level overview
-              of a sample, use the powerful filtering and flagging system to
-              identify areas of interest, and drill down to the allele level to
-              override individual calls. Data can then be exported in various
-              formats such as Excel (*.xlsx) or CODIS (*.cmf), so that users can
-              have full control of their data.
-            </p>
-
-            <p>
-              The initial v1 of this application was developed at{' '}
-              <Link href='https://www.illumina.com/' target='_blank'>
-                Illumina
-              </Link>
-              . It was later spun off into a separate company as{' '}
-              <Link href='https://www.verogen.com/' target='_blank'>
-                Verogen
-              </Link>{' '}
-              where a v2 was built from the ground up.
-            </p>
-
-            <p>ForenSeq UAS uses the following core technologies:</p>
-
-            <motion.ul
-              initial='hidden'
-              whileInView='visible'
-              variants={ulMotion}
-              viewport={{ once: true }}
+    <div>
+      <div className={`pt-4 ${styles.section}`}>
+        <h1 className="text-3xl text-balance">ForenSeq Universal Analysis Software</h1>
+        <TagList tags={tags} />
+        <div>
+          <p>
+            The{' '}
+            <Link
+              href='https://verogen.com/products/universal-analysis-software/'
+              target='_blank'
             >
-              <motion.li variants={liMotion}>Angular</motion.li>
-              <motion.li variants={liMotion}>Angular Material</motion.li>
-              <motion.li variants={liMotion}>Tailwind CSS</motion.li>
-              <motion.li variants={liMotion}>.NET Core Web API</motion.li>
-              <motion.li variants={liMotion}>Entity Framework Core</motion.li>
-              <motion.li variants={liMotion}>PostgreSQL</motion.li>
-            </motion.ul>
-          </div>
-        </motion.div>
+              ForenSeq Universal Analysis Software (UAS)
+            </Link>{' '}
+            provides a platform for analyzing and managing forensic genomic
+            data, simplifying complex bioinformatics. It brings the power of
+            next-gen sequencing to the field of forensic genomics, and pairs it
+            with first-class UI tools. Users can view a high-level overview of a
+            sample, use the powerful filtering and flagging system to identify
+            areas of interest, and drill down to the allele level to override
+            individual calls. Data can then be exported in various formats such
+            as Excel (*.xlsx) or CODIS (*.cmf), so that users can have full
+            control of their data.
+          </p>
+
+          <p>
+            The initial v1 of this application was developed at{' '}
+            <Link href='https://www.illumina.com/' target='_blank'>
+              Illumina
+            </Link>
+            . It was later spun off into a separate company as{' '}
+            <Link href='https://www.verogen.com/' target='_blank'>
+              Verogen
+            </Link>{' '}
+            where a v2 was built from the ground up.
+          </p>
+        </div>
       </div>
     </div>
   );
 };
 
-export const portfolioData: SectionData[] = [
+export const uasPortfolioData: SectionData[] = [
   // Locus Overview
   {
     color: 'bg-v1',

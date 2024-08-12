@@ -1,0 +1,8 @@
+.accent {
+  color: var(--color-accent);
+}
+
+.hover {
+  @apply transition-all flex align-middle relative py-1 px-2 m-1;
+	@apply hover:text-yellow-300;
+}

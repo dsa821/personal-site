@@ -6,16 +6,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { IconArrowRight } from '@tabler/icons-react';
 
-import { PortfolioData } from 'data/portfolio';
+import { ProjectData } from 'data/projects';
 
 import styles from './styles.module.css';
+import { TagList } from '../TagList';
 
 type Props = {
-  data: PortfolioData[];
+  data: ProjectData[];
 };
 export const Projects: React.FC<Props> = ({ data }) => {
   return (
-    <div className='flex flex-col gap-8'>
+    <div className='flex flex-col gap-16'>
       {data.map((x) => {
         return (
           <motion.div
@@ -24,7 +25,7 @@ export const Projects: React.FC<Props> = ({ data }) => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.75 }}
             viewport={{ margin: '-50px', once: true }}
-            className='flex flex-wrap gap-4'
+            className='flex flex-wrap gap-8'
           >
             <div className='w-full h-36 lg:w-64 flex-none relative'>
               {x.imgUrl && (
@@ -41,16 +42,12 @@ export const Projects: React.FC<Props> = ({ data }) => {
 
               <p>{x.description}</p>
               <p className='font-bold'>
-                <Link href={x.url} target='_blank'>
+                <Link href={x.url} target={x.newWindow ? '_blank' : '_self'}>
                   More <IconArrowRight className={`${styles.accent} inline`} />
                 </Link>
               </p>
 
-              <div className={styles.tags}>
-                {x.tags.map((tag) => {
-                  return <div key={tag} className={styles.tag}>{tag}</div>;
-                })}
-              </div>
+              <TagList tags={x.tags} />
             </div>
           </motion.div>
         );

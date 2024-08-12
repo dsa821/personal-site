@@ -1,33 +1,31 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-import { Intro, portfolioData } from './data';
 import styles from './styles.module.css';
 import { PortfolioImage } from 'app/components/PortfolioImage';
 import { PhotoProvider } from 'react-photo-view';
+import { UasIntro, uasPortfolioData } from './data';
 
 export const Portfolio = () => {
   return (
     <PhotoProvider>
-      <Intro />
+      <UasIntro />
 
-      {portfolioData.map((data, i) => {
+      {uasPortfolioData.map((data, i) => {
         return (
           <div key={i} className={data.color ? styles[data.color] : ''}>
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.75 }}
               viewport={{ margin: '-150px', once: true }}
             >
               <div className={styles.section}>
                 {data.title && (
                   // <Link href={`#${data.anchor}`} id={data.anchor} className='jump-link'>
-                    <h2>{data.title}</h2>
+                    <h2 className="text-balance">{data.title}</h2>
                   // </Link>
                 )}
 
