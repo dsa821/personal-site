@@ -1,20 +1,18 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-import { Intro, portfolioData } from './data';
 import styles from './styles.module.css';
 import { PortfolioImage } from 'app/components/PortfolioImage';
 import { PhotoProvider } from 'react-photo-view';
+import { UasIntro, uasPortfolioData } from './data';
 
 export const Portfolio = () => {
   return (
     <PhotoProvider>
-      <Intro />
+      <UasIntro />
 
-      {portfolioData.map((data, i) => {
+      {uasPortfolioData.map((data, i) => {
         return (
           <div key={i} className={data.color ? styles[data.color] : ''}>
             <motion.div

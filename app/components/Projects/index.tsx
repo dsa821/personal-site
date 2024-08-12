@@ -6,12 +6,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { IconArrowRight } from '@tabler/icons-react';
 
-import { PortfolioData } from 'data/portfolio';
+import { ProjectData } from 'data/projects';
 
 import styles from './styles.module.css';
+import { TagList } from '../TagList';
 
 type Props = {
-  data: PortfolioData[];
+  data: ProjectData[];
 };
 export const Projects: React.FC<Props> = ({ data }) => {
   return (
@@ -41,16 +42,12 @@ export const Projects: React.FC<Props> = ({ data }) => {
 
               <p>{x.description}</p>
               <p className='font-bold'>
-                <Link href={x.url} target='_blank'>
+                <Link href={x.url} target={x.newWindow ? '_blank' : '_self'}>
                   More <IconArrowRight className={`${styles.accent} inline`} />
                 </Link>
               </p>
 
-              <div className={styles.tags}>
-                {x.tags.map((tag) => {
-                  return <div key={tag} className={styles.tag}>{tag}</div>;
-                })}
-              </div>
+              <TagList tags={x.tags} />
             </div>
           </motion.div>
         );

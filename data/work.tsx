@@ -13,7 +13,7 @@ export type WorkHistoryData = {
 };
 export const workHistory: WorkHistoryData[] = [
   {
-    companyName: "Verogen",
+    companyName: "Verogen (acquired by QIAGEN)",
     companyUrl: "https://www.verogen.com/",
     logo: <LogoVerogen />,
     jobTitle: "Senior Staff Software Engineer",
@@ -23,9 +23,10 @@ export const workHistory: WorkHistoryData[] = [
         <p>
           Verogen began as a spin-off of a project that I had worked on at
           Illumina. Along with two other ex-Illumina employees, we formed the
-          core of Verogen's software team and helped build Verogen into the
-          world's first dedicated forensic genomics and human identification
-          company.
+          core of Verogen's software team and helped build it into the world's
+          first dedicated forensic genomics and human identification company.
+          Because of our work, this led to QIAGEN acquiring Verogen in January
+          of 2023.
         </p>
         <p>
           I was primarily responsible for rebuilding the front-end of the

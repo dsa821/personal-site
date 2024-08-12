@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 import styles from './styles.module.css';
 import { PortfolioImage } from 'app/components/PortfolioImage';
+import { TagList } from '../TagList';
 
 export type SectionData = {
   color?: string;
@@ -21,35 +22,24 @@ type ImageData = {
   height?: number;
 };
 
-export const Intro = () => {
-  const ulMotion = {
-    visible: {
-      opacity: 1,
-      transition: {
-        when: 'beforeChildren',
-        staggerChildren: 0.1,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      transition: {
-        when: 'afterChildren',
-      },
-    },
-  };
-  const liMotion = {
-    visible: { opacity: 1, x: 0 },
-    hidden: { opacity: 0, x: 100 },
-  };
+export const UasIntro = () => {
+  const tags = [
+    'Angular',
+    'Angular Material',
+    'Tailwind CSS',
+    '.NET Core',
+    'Entity Framework',
+    'PostgreSQL',
+  ];
 
   return (
-    <div className='bg-gradient-to-br from-slate-800 min-h-lvh'>
-      <div className={`pt-24 ${styles.section}`}>
+    <div className='min-h-lvh pb-8 md:pb-8'>
+      <div className={`pt-24 pb-16 ${styles.section}`}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
           <h1>ForenSeq Universal Analysis Software</h1>
@@ -87,19 +77,7 @@ export const Intro = () => {
 
             <p>ForenSeq UAS uses the following core technologies:</p>
 
-            <motion.ul
-              initial='hidden'
-              whileInView='visible'
-              variants={ulMotion}
-              viewport={{ once: true }}
-            >
-              <motion.li variants={liMotion}>Angular</motion.li>
-              <motion.li variants={liMotion}>Angular Material</motion.li>
-              <motion.li variants={liMotion}>Tailwind CSS</motion.li>
-              <motion.li variants={liMotion}>.NET Core Web API</motion.li>
-              <motion.li variants={liMotion}>Entity Framework Core</motion.li>
-              <motion.li variants={liMotion}>PostgreSQL</motion.li>
-            </motion.ul>
+            <TagList tags={tags} />
           </div>
         </motion.div>
       </div>
@@ -107,7 +85,7 @@ export const Intro = () => {
   );
 };
 
-export const portfolioData: SectionData[] = [
+export const uasPortfolioData: SectionData[] = [
   // Locus Overview
   {
     color: 'bg-v1',
