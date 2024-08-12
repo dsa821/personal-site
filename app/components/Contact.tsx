@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const Contact = () => {
   return (
     <div>
-      <div className='grid grid-cols-3'>
+      <div className='flex flex-wrap gap-x-8'>
         <span className='flex gap-4'>
           <IconMail />
           <Link href='mailto:hi@danielsa.dev'>hi@danielsa.dev</Link>
