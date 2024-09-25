@@ -10,7 +10,7 @@ export const Contact = () => {
           <Link href='mailto:hi@danielsa.dev'>hi@danielsa.dev</Link>
         </span>
 
-        <span className='flex gap-4'>
+        {/* <span className='flex gap-4'>
           <IconDownload />
           <Link
             href='/docs/Daniel Sa - Senior Staff Software Engineer - Resume.pdf'
@@ -18,7 +18,7 @@ export const Contact = () => {
           >
             see my resume!
           </Link>
-        </span>
+        </span> */}
       </div>
     </div>
   );
