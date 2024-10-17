@@ -30,19 +30,19 @@ export const projectData: ProjectData[] = [
     ],
   },
 
-  {
-    name: "Hades 2 - The Crossroads",
-    description: (
-      <>
-        A WIP fan site for the game <strong>Hades 2</strong>. A compendium for
-        builds, a wiki for boons and other important game info, and even some
-        tools to assist with in-game mechanics like the Altar of Ashes and the
-        Vow of Forsaking.
-      </>
-    ),
-    url: "https://hades2-crossroads.vercel.app/",
-    newWindow: true,
-		imgUrl: '/images/hades2-crossroads.png',
-    tags: ["Next.js", "Tailwind CSS"],
-  },
+  // {
+  //   name: "Hades 2 - The Crossroads",
+  //   description: (
+  //     <>
+  //       A WIP fan site for the game <strong>Hades 2</strong>. A compendium for
+  //       builds, a wiki for boons and other important game info, and even some
+  //       tools to assist with in-game mechanics like the Altar of Ashes and the
+  //       Vow of Forsaking.
+  //     </>
+  //   ),
+  //   url: "https://hades2-crossroads.vercel.app/",
+  //   newWindow: true,
+	// 	imgUrl: '/images/hades2-crossroads.png',
+  //   tags: ["Next.js", "Tailwind CSS"],
+  // },
 ];
